@@ -7,12 +7,12 @@ const CompanyList = () => {
 const [empresas, setEmpresas] = useState([]);
 
   useEffect(() => {
-    fetchEmpresas(); // Chama a função que faz a chamada da API
+    fetchEmpresas();
   }, []);
 
   const fetchEmpresas = async () => {
     try {
-      const response = await api.get('http://localhost:3000/company'); // Use sua URL da API
+      const response = await api.get('http://localhost:3000/company');
       setEmpresas(response.data);
     } catch (error) {
       console.error('Erro ao buscar os dados da API:', error);
