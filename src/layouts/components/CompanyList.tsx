@@ -12,7 +12,7 @@ const [empresas, setEmpresas] = useState([]);
 
   const fetchEmpresas = async () => {
     try {
-      const response = await api.get('http://localhost:3000/company');
+      const response = await api.get('https://your-reviews-api-295d118672a8.herokuapp.com/company');
       setEmpresas(response.data);
     } catch (error) {
       console.error('Erro ao buscar os dados da API:', error);
