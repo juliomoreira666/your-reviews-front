@@ -1,7 +1,7 @@
 {
   "site": {
-    "title": "Nextplate",
-    "base_url": "https://nextplate.netlify.app",
+    "title": "YourReviews",
+    "base_url": "https://your-reviews.com.br",
     "base_path": "/",
     "trailing_slash": false,
     "favicon": "/images/favicon.png",
@@ -9,11 +9,11 @@
     "logo_darkmode": "/images/logo-darkmode.png",
     "logo_width": "150",
     "logo_height": "27",
-    "logo_text": "Nextplate"
+    "logo_text": "YourReviews"
   },
 
   "settings": {
-    "search": true,
+    "search": false,
     "sticky_header": true,
     "theme_switcher": true,
     "default_theme": "system",
@@ -24,7 +24,7 @@
 
   "params": {
     "contact_form_action": "#",
-    "copyright": "Designed And Developed by [Zeon Studio](https://zeon.studio)"
+    "copyright": "Designed And Developed by [Júlio Moreira](https://www.linkedin.com/in/julio-moreira-fullstack/)"
   },
 
   "navigation_button": {
@@ -33,6 +33,7 @@
     "link": "https://github.com/zeon-studio/nextplate"
   },
 
+
   "disqus": {
     "enable": true,
     "shortname": "themefisher-template",
@@ -40,8 +41,8 @@
   },
 
   "metadata": {
-    "meta_author": "Themefisher",
+    "meta_author": "YourReviews",
     "meta_image": "/images/og-image.png",
-    "meta_description": "Next Boilerplate"
+    "meta_description": "YourReviews - Descubra uma plataforma onde avaliações autênticas impulsionam sua decisão de carreira. Nossos espaços seguros permitem que funcionários e ex-funcionários avaliem empresas sem manipulações, capacitando você a tomar decisões informadas sobre sua trajetória profissional."
   }
 }

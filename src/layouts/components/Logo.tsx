@@ -44,7 +44,7 @@ const Logo = ({ src }: { src?: string }) => {
           alt={title}
           priority
           style={{
-            height: logo_height.replace("px", "") + "px",
+            height: 'auto',
             width: logo_width.replace("px", "") + "px",
           }}
         />

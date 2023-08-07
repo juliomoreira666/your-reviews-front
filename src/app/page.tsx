@@ -1,3 +1,4 @@
+import CompanyList from "@/components/CompanyList";
 import ImageFallback from "@/helpers/ImageFallback";
 import { getListPage } from "@/lib/contentParser";
 import { markdownify } from "@/lib/utils/textConverter";
@@ -5,6 +6,7 @@ import CallToAction from "@/partials/CallToAction";
 import SeoMeta from "@/partials/SeoMeta";
 import Testimonials from "@/partials/Testimonials";
 import { Button, Feature } from "@/types";
+import { Rating } from "@mui/material";
 import { FaCheck } from "react-icons/fa/index.js";
 
 const Home = () => {
@@ -56,7 +58,9 @@ const Home = () => {
           </div>
         </div>
       </section>
-
+  
+      <CompanyList/>
+       
       {features.map((feature, index: number) => (
         <section
           key={index}
@@ -116,5 +120,6 @@ const Home = () => {
     </>
   );
 };
+
 
 export default Home;
