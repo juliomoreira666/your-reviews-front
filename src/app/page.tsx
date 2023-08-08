@@ -1,4 +1,5 @@
 import CompanyList from "@/components/CompanyList";
+import CompanyProfile from "@/components/CompanyProfile";
 import ImageFallback from "@/helpers/ImageFallback";
 import { getListPage } from "@/lib/contentParser";
 import { markdownify } from "@/lib/utils/textConverter";
@@ -6,7 +7,6 @@ import CallToAction from "@/partials/CallToAction";
 import SeoMeta from "@/partials/SeoMeta";
 import Testimonials from "@/partials/Testimonials";
 import { Button, Feature } from "@/types";
-import { Rating } from "@mui/material";
 import { FaCheck } from "react-icons/fa/index.js";
 
 const Home = () => {
@@ -58,9 +58,9 @@ const Home = () => {
           </div>
         </div>
       </section>
-  
-      <CompanyList/>
-       
+
+      <CompanyList />
+
       {features.map((feature, index: number) => (
         <section
           key={index}
@@ -69,9 +69,8 @@ const Home = () => {
           <div className="container">
             <div className="row items-center justify-between">
               <div
-                className={`mb:md-0 mb-6 md:col-5 ${
-                  index % 2 !== 0 && "md:order-2"
-                }`}
+                className={`mb:md-0 mb-6 md:col-5 ${index % 2 !== 0 && "md:order-2"
+                  }`}
               >
                 <ImageFallback
                   src={feature.image}
@@ -81,9 +80,8 @@ const Home = () => {
                 />
               </div>
               <div
-                className={`md:col-7 lg:col-6 ${
-                  index % 2 !== 0 && "md:order-1"
-                }`}
+                className={`md:col-7 lg:col-6 ${index % 2 !== 0 && "md:order-1"
+                  }`}
               >
                 <h2
                   className="mb-4"
