@@ -3,7 +3,23 @@ import { Rating } from '@mui/material';
 import Image from 'next/image';
 import React, { useEffect, useState } from 'react';
 import { api } from '@/lib/axios';
+import ReviewModal from './ModalNewReview';
+import { FaPen } from 'react-icons/fa6';
+
 const CompanyProfile = () => {
+  const [isModalOpen, setModalOpen] = useState(false);
+  const openModal = () => {
+    setModalOpen(true);
+  };
+
+  const closeModal = () => {
+    setModalOpen(false);
+  };
+
+  const handleSubmit = (formData: any) => {
+    console.log(formData);
+    // closeModal();
+  };
 
   const idCompany = typeof window !== 'undefined' ? window.location.pathname.split("/").pop() : null;
   const comments = [
@@ -154,16 +170,20 @@ const CompanyProfile = () => {
                         </div>
                         <div className="mt-4">
                           <h5>Comentário:</h5>
-                          <p className="text-gray-600">{review.comment}</p>
+                          <p className="text-gray-600 text-justify mt-2">{review.comment}</p>
                         </div>
                       </div>
                     ))
                   ) : (
-                    <div className="bg-orange-100 border-l-4 border-orange-500 text-orange-700 p-4" role="alert">
-                      <p className="font-bold">Atenção</p>
-                      <p>Essa empresa ainda não possui nenhuma avaliação</p>
-                    </div>
+                    activeTab === 'reviews' && data.reviews?.length === 0 && (
+                      <div className="bg-orange-100 border-l-4 border-orange-500 text-orange-700 p-4" role="alert">
+                        <p className="font-bold">Atenção</p>
+                        <p>Essa empresa ainda não possui nenhuma avaliação</p>
+                      </div>
+                    )
                   )}
+
+                  <ReviewModal isOpen={isModalOpen} onClose={closeModal} onSubmit={handleSubmit} />
                 </div>
 
                 {activeTab === 'comments' &&
@@ -187,7 +207,6 @@ const CompanyProfile = () => {
                               fill="currentColor"
                               aria-hidden="true"
                             >
-                              {/* ícone aqui */}
                             </svg>
                             {comment.text}
                           </div>
@@ -197,8 +216,13 @@ const CompanyProfile = () => {
                   ))}
               </div>
             </div>
+
           </div>
+          <button className="bg-green-500 text-white px-4 py-2 rounded-sm w-full uppercase float-right mt-3 mb-3" onClick={openModal}>
+            <FaPen className='float-left mt-1 mr-3' /> Fazer uma avaliação
+          </button>
         </div>
+
       </div>
     </div >
   );
